@@ -1,0 +1,11 @@
+<div class="conatiner mt-5">
+    <div class="text-center mb-5">
+        <h2 class="text-warning"> <i class="fab fa-ideal text-warning"></i> Sign Up</h2>
+    </div>
+    <div class="text-center mt-5 p-4">
+    <%= form_with(model: @user, local: true) do |f| %>
+      <%= f.text_field :name, placeholder: "Your Name", class: 'w-50' %>
+      <%= f.submit "Sign Up", class: 'btn btn-primary w-50 mt-4' %>
+    <% end %>
+    </div>
+</div>
