@@ -15,11 +15,11 @@ RSpec.describe User, type: :model do
     expect(invalid_user).to_not be_valid
   end
 
-  it 'checks for correct post association' do
+  it 'checks for correct user association' do
     expect(deals).to eq(:has_many)
   end
 
-  it 'check for the correct comment association' do
+  it 'check for the correct user association' do
     expect(groups).to eq(:has_many)
   end
 end
