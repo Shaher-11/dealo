@@ -1,9 +1,10 @@
 <div class="container mt-5">
-    <div class="text-center mb-5">
-      <h2 class="text-warning"> <i class="fab fa-ideal text-warning"></i> Sign In</h2>
+    <div class="text-center title mb-5">
+      <h1 class="text"> <i class="fab fa-ideal"></i> </h1>
+      <h1> Sign In</h1>
     </div>
 
-    <div class="text-center mt-5 p-4">
+    <div class="text-center btons p-4">
         <%= form_with(url: sign_in_path, scope: :session, local: true) do |f| %>
     
             <%= f.text_field :name, placeholder: "Your Name", class: "w-100" %>

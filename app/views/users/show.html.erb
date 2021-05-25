@@ -1,6 +1,6 @@
 
-<div class="container mt-5 text-center">
-  <div class="pagy">
+<div class="mt-5 pagy text-center">
+  <div class="app">
     <div class="user">
         <img class="user-img" src="https://st4.depositphotos.com/4326917/25550/v/1600/depositphotos_255506794-stock-illustration-user-avatar-illustration-anonymous-sign.jpg">
         <h2 class="name"><%= @user.name %></h2>
@@ -25,7 +25,7 @@
                 <% end %>
             </li>
 
-            <li class=" mb-5"><h3>
+            <li class=" mb-1"><h3>
                 <%= link_to sign_out_path, method: :delete do %>
                     <i class=" text-light fas fa-sign-out-alt"></i><span id="dea"> Sign Out </span></h3>
                 <% end %>
