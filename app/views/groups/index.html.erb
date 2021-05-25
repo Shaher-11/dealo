@@ -1,0 +1,20 @@
+<div class="container text-center mt-5">
+    <div>
+        <%= link_to user_path(current_user) do %>
+            <i class="fas fa-bars"></i>
+        <% end %>
+        <br>
+        <br>
+        <h3>All Groups</h3>
+    </div>
+    <div class="head-low">
+        <p>Total Groups</p>
+        <p class="price"><%= @groups.count %></p>
+    </div>
+    <div class="list-items">
+        <%= make_group(@groups) %>
+    </div>
+    <div class="create-group">
+    <%= link_to 'Create Group', new_group_path, class: 'btn btn-primary'  %>
+    </div>
+</div>

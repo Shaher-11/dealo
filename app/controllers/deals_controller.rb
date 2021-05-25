@@ -9,11 +9,24 @@ class DealsController < ApplicationController
   end
 
   def new
+    if request.original_url.include?('groups')
+      @group = Group.find(params[:group_id])
+      @deal = @group.deals.new
+    else
       @deal = Deal.new
     end
   end
 
   def create
+    if request.original_url.include?('groups')
+      @group = Group.find(params[:group_id])
+      @deal = Deal.create(deal_params)
+      @deal.groups << @group
+
+    else
+      @deal = Deal.create(deal_params)
+    end
+    @deal.author = current_user
 
     if @deal.save
       flash[:notice] = 'Deal was created successfully!'
