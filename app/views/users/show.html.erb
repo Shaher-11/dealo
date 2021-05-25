@@ -1,4 +1,37 @@
-<h1>User's Show page</h1>
 
-<%= link_to 'Sign Out', sign_out_path, method: :delete, class: 'btn btn-danger' %>
-<h2 class="user-name"><%= @user.name %></h2>
+<div class="container mt-5 text-center">
+  <div class="pagy">
+    <div class="user">
+        <img class="user-img" src="https://st4.depositphotos.com/4326917/25550/v/1600/depositphotos_255506794-stock-illustration-user-avatar-illustration-anonymous-sign.jpg">
+        <h2 class="name"><%= @user.name %></h2>
+    </div>
+    </nav>
+
+    <div class="links mt-5 text-light">
+        <ul class="mene">
+            <li class=" mb-5 text-light"><h3>
+                <%= link_to deals_path do %>
+                    <i class=" text-light fab fa-ideal"></i> <span id="deal"> Deals </span></h3>
+                <% end %>
+            </li>
+            <li class=" mb-5"><h3>
+                <%= link_to deals_path(:ungrouped => true) do %>
+                    <i class=" text-light fab fa-ideal"></i> <span id="del"> Solo </span></h3>
+                <% end %>
+            </li>
+            <li class=" mb-5"><h3>
+                <%= link_to groups_path do %>
+                    <i class="text-light fa fa-layer-group"></i><span id="dal"> Group </span></h3>
+                <% end %>
+            </li>
+
+            <li class=" mb-5"><h3>
+                <%= link_to sign_out_path, method: :delete do %>
+                    <i class=" text-light fas fa-sign-out-alt"></i><span id="dea"> Sign Out </span></h3>
+                <% end %>
+            </li>
+        </ul>
+        <hr>
+    </div>
+    </div>
+    </div>

@@ -1,1 +1,39 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+.pagy {
+  background-color: #3778C2;
+}
+
+.user-img {
+  width: 35%;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.name {
+  color: white;
+  font-weight: 900;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+#deal {
+  color: white !important;
+}
+
+#del {
+  color: white !important;
+}
+
+#dal {
+  color: white !important;
+}
+
+#dea {
+  color: white !important;
+}
+
+.mene {
+  list-style-type: none;
+}
