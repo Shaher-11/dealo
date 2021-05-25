@@ -3,5 +3,5 @@ class Deal < ApplicationRecord
   has_and_belongs_to_many :groups, optional: true
 
   validates :amount, presence: true, numericality: { only_float: true }
-  validates :title, presence: true, length: { minimum: 5, maximum: 30 }
+  validates :title, presence: true, length: { minimum: 2, maximum: 30 }
 end
