@@ -1,0 +1,21 @@
+<div class="container mb-5">
+    <div class="head">
+        <%= link_to user_path(current_user) do %>
+            <i class="fas fa-bars"></i>
+        <% end %>
+        <h3><%= current_user.name.capitalize %>'s Deals</h3>
+    </div>
+
+    <div>
+        <p>The Total Cost</p>
+        <% if @deal.present? %>
+        <p class="price">$<%= @deals.sum(:amount) %></p>
+        <% end  %>
+    </div>
+    <div class="list-items">
+    <%= make_deals(@deals) %>
+    </div>
+    <div class="create-group">
+        <%= link_to 'Add Deal', new_deal_path, class: 'btn btn-primary'  %>
+    </div>
+</div>
