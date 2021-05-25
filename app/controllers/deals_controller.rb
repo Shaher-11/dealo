@@ -11,7 +11,7 @@ class DealsController < ApplicationController
   def new
     if request.original_url.include?('groups')
       @group = Group.find(params[:group_id])
-      @deal = @group.deals.new
+      @deal = Deal.new
     else
       @deal = Deal.new
     end
