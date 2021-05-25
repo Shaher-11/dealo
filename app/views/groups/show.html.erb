@@ -6,23 +6,19 @@
         <h3>Group: <%= @group.name %> </h3>
     </div>
         
-    <div class="head-low">
+    <div>
         <p>Total Cost</p>
-        <p class="price">$<%= @group.deals.map(&:total).sum %></p>
     </div>
     <div>
-    <% @group.deals.each do |g| %>
-        <%= link_to deal_path(g) do %>
+        <%= link_to deal_path(@group) %>
         <div>
             <div>
-                <p><%= g.name %></p>
-                <p><%= g.created_at.strftime("%Y-%m-%d") %></p>
+                <p><%= @group.name %></p>
+                <p><%= @group.created_at.strftime("%Y-%m-%d") %></p>
             </div>
-            <p>Price: $<%= g.total %></p>
+            <p>Price: $<%= @group.total %></p>
         </div>
-        <% end %>
-    <% end %>
-    </div>
+            </div>
     <div>
         <%= link_to 'Add Deal', new_group_deal_path(@group), class: 'btn btn-primary'  %>
     </div>

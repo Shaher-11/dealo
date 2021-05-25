@@ -1,11 +1,11 @@
 module DealsHelper
-  #def make_deals(deals)
-    #html_values = ''
-    #deals.each do |dl|
-     # html_values << deals_body(dl)
-    #end
-    #html_values.html_safe
-  #end
+  def make_deals(deals)
+    html_values = ''
+    deals.each do |dl|
+      html_values << deals_body(dl)
+    end
+    html_values.html_safe
+  end
 
   def add_icon(obj, size = '60')
     if obj.groups.first
