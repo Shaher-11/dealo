@@ -10,10 +10,10 @@ class DealsController < ApplicationController
 
   def new
       @deal = Deal.new
+    end
   end
 
   def create
-    @deal.author = current_user
 
     if @deal.save
       flash[:notice] = 'Deal was created successfully!'
