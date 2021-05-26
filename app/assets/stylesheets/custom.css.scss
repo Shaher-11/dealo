@@ -115,11 +115,18 @@ form {
 }
 
 .item {
-  background: #fff;
   color: var(--text);
   padding: 0.5rem;
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.links,
+.links a {
+  color: white;
+  font-size: 2rem;
+  margin-right: 2rem;
+  text-decoration: none;
 }
