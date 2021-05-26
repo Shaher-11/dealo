@@ -97,3 +97,29 @@ form {
 .pagy {
   margin-right: 6rem !important;
 }
+
+.top {
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.creating {
+  text-align: center;
+  margin-bottom: 5rem !important;
+}
+
+.item {
+  background: #fff;
+  color: var(--text);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

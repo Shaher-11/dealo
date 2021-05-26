@@ -1,11 +1,11 @@
-<div class="container mt-5">
+<div class="container app mt-5">
     <div class="text-center mb-5">
         <%= link_to 'javascript:history.back()' do %> <h4>
             <i class="fas fa-arrow-left"></i>Back</h4>
         <% end %>
         <br>
         <br>
-        <h3>New Deal</h3>
+        <h3 class="h1 text-white font-weight-bold">New Deal</h3>
     <div class="text-center mt-5 p-4">
         <%= form_with model: @deal  do |f| %>
     <%= f.text_field :title, placeholder: 'Deal Name', class: 'w-100' %><br/><br/>
