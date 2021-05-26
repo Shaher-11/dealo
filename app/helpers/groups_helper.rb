@@ -1,5 +1,4 @@
 module GroupsHelper
-
   def make_group(groups)
     html_values = ''
     groups.each do |group|
@@ -7,6 +6,4 @@ module GroupsHelper
     end
     html_values.html_safe
   end
-
-
 end

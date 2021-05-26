@@ -1,21 +1,22 @@
 # rubocop:disable Layout/LineLength
 class DealsController < ApplicationController
+
+
+  before_action :authenticate_with_http_digest
   def index
     @deall = Deal.all
     @deals = if params['solo']
-    Deal.where(authors: current_user).includes(:deals_groups).where(deal_groups: { id: nil }).includes([:groups])
-    else
-    Deal.where(authors: current_user).includes(:deals_groups).where.not(deal_groups: { id: nil })
-    end
+               Deal.where(author: current_user).includes(:deals_groups).where(deal_groups: { id: nil }).includes([:groups])
+             else
+               Deal.where(author: current_user).includes(:deals_groups).where.not(deal_groups: { id: nil })
+             end
   end
 
   def new
-    if request.original_url.include?('groups')
-      @group = Group.find(params[:group_id])
-      @deal = Deal.new
-    else
-      @deal = Deal.new
-    end
+    return if request.original_url.include?('groups')
+
+    @group = Group.find(params[:group_id])
+    @deal = Deal.new
   end
 
   def create

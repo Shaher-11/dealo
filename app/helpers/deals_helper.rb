@@ -18,11 +18,4 @@ module DealsHelper
     </div>
     </a>".html_safe
   end
-  def make_deals(deals)
-    html_values = ''
-    deals.each do |d|
-      html_values << gifts_html_template(d)
-    end
-    html_values.html_safe
-  end
 end
