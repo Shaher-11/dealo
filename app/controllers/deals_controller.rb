@@ -1,6 +1,7 @@
 # rubocop:disable Layout/LineLength
 class DealsController < ApplicationController
   def index
+    @deall = Deal.all
     @deals = if params['solo']
     Deal.where(authors: current_user).includes(:deals_groups).where(deal_groups: { id: nil }).includes([:groups])
     else

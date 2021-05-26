@@ -5,16 +5,22 @@
         <% end %>
         <h3 class="username"><%= current_user.name.capitalize %>'s Deals</h3>
     </div>
+    <div class="mb-5">
+        <p class="text-white text-center h3">The Total Cost Of All Deals</p>
+        <p class="text-white text-center h5">$<%= @deall.sum(:amount) %></p>
+    </div>
+    
+    <div class="mb-5">
+        <p class="text-white text-center h3">The Total Number Of Deals</p>
+        <p class="text-white text-center h5">$<%= @deall.count.to_i %></p>
+    </div>
 
-    <div>
-        <p>The Total Cost</p>
-        <% if @deal.present? %>
-        <p class="price">$<%= @deals.sum(:amount) %></p>
-        <% end  %>
-    </div>
-    <div class="">
-    </div>
-    <div class="creating ">
+    <h1 class="text-white text-center">All Deals</h1>
+        <% @deall.each do |d| %>
+        <%= link_to d.title, deal_path(d), class: "btn btn-outline-success text-center" %>
+        <% end %>
+
+    <div class="creating mb-5">
         <%= link_to new_deal_path, class: 'btn btn-primary' do %> <h3>
             <i class="fas fa-plus"></i>Add Deal </h3>
         <% end %>

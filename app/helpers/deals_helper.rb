@@ -7,22 +7,9 @@ module DealsHelper
     html_values.html_safe
   end
 
-  def add_icon(obj, size = '60')
-    if obj.groups.first
-      if obj.groups.first.icon != ''
-        image_tag(obj.groups.first.icon, size: size, alt: "#{obj.name} icon")
-      else
-        image_tag('https://via.placeholder.com/60', size: size, alt: "#{obj.name} icon")
-      end
-    else
-      image_tag('https://via.placeholder.com/60', size: size, alt: 'Solo Deal icon')
-    end
-  end
-
   def deals_body(obj)
     "<a href='/deals/#{obj.id}'>
     <div>
-    #{add_deal_icon(obj)}
         <div>
             <p>#{obj.name}</p>
             <p>#{obj.created_at}</p>
@@ -31,5 +18,11 @@ module DealsHelper
     </div>
     </a>".html_safe
   end
-
+  def make_deals(deals)
+    html_values = ''
+    deals.each do |d|
+      html_values << gifts_html_template(d)
+    end
+    html_values.html_safe
+  end
 end
