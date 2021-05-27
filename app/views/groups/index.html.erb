@@ -1,0 +1,18 @@
+<div class="container text-center app text-white mt-5">
+    <div>
+        <%= link_to user_path(current_user) do %>
+            <i class="fas fa-arrow-left h4"></i>
+        <% end %>
+        <br>
+    <h1 class="text-white text-center">All Groups</h1>
+        <% @groups.each do |g| %>
+        <ul class="item">
+        <li>
+    <%= link_to g.name, group_path(g), class: "btn btn-outline-success text-center" %>
+        </li>
+        </ul>
+        <% end %>
+    <div class="creating mt-5">
+    <%= link_to 'Create Group', new_group_path, class: 'btn btn-primary'  %>
+    </div>
+</div>
