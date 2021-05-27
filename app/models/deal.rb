@@ -1,6 +1,7 @@
 class Deal < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
-  has_and_belongs_to_many :groups, optional: true
+  belongs_to :author, class_name: 'User'
+  has_many :deal_groups
+  has_many :groups, through: :deal_groups
 
   validates :amount, presence: true, numericality: { only_float: true }
   validates :title, presence: true, length: { minimum: 2, maximum: 30 }
